@@ -18,24 +18,18 @@ header {
   color: black;
   padding: 2.5rem 2rem;
   margin: auto;
-  max-width: 70%;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   position: sticky;
   top: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 p {
   font-family: 'Open Sans', sans-serif;
-}
-
-.thin-line {
-  height: 1px;
-  background-color: #ccc;
-  transform: scaleY(0.5);
-  transform-origin: top;
 }
 
 .logo {
@@ -254,9 +248,22 @@ footer {
 }
 
 @media (max-width: 1024px) {
+  header {
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+  }
+  
+  nav {
+    display: none;
+  }
+
   .hero {
-    padding: 2rem 1rem;
-    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero .text {
+    max-width: 100%;
   }
 
   .hero .image {
@@ -264,51 +271,29 @@ footer {
     margin-top: 50px;
   }
 
-  .sobre {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sobre .imagem, .sobre .texto {
+  .hero .image img {
     max-width: 100%;
   }
+}
 
-  .sobre .imagem img {
-    width: 500px;
-    height: auto;
-  }
-
-  .depoimento {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .depoimento img {
-    margin-bottom: 1rem;
-  }
-
+@media (max-width: 768px) {
   .procedimentos, .sobre, .depoimentos, .contato {
-    max-width: 90%;
+    padding: 2rem 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card {
     padding: 2rem 1rem;
   }
 
-  header {
-    max-width: 100%;
-    margin: auto;
-    /* padding: 1.5rem 1rem; */
-  }
-
-  nav {
-    display: none;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-    margin: auto;
+  .card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1rem;
   }
 }
